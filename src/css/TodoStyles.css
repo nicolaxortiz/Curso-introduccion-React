@@ -47,26 +47,29 @@
 }
 
 .Boton{
-    padding: 15px 25px;
-    background-color: rgb(146, 198, 247);
+    padding: 15px 23px;
+    background-color: #92c6f7;
     border: none;
-    font-size: 20px;
-    border-radius: 25px;
+    font-weight: bolder;
+    font-size: 30px;
+    border-radius: 50%;
     cursor: pointer;
     margin-top: 10px;
-    transition: 300ms ease-in-out;
-    margin-bottom: 25px;
+    transition: 400ms ease-in-out;
+    position: relative;
+    bottom: 0;
+    transform: rotate(0);
 }
 
 .Boton:hover{
-    padding: 15px 25px;
-    background-color: rgb(185, 146, 247);
-    border: none;
-    font-size: 20px;
-    border-radius: 25px;
+    padding: 15px 23px;
+    background-color: #b992f7;
+    cursor: pointer;
+    font-size: 30px;
+    transition: 300ms ease-in-out;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.212);
     cursor: pointer;
-    margin-top: 10px;
+    transform: rotate(224deg);
 }
 
 .Eliminar{
@@ -110,3 +113,77 @@
     border: #6aeb9b 2px solid;
     color: white;
 }
+
+.modalBackground{
+    background: rgba(32,35,41,.8);
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 0;
+}
+
+.formulario{
+    background-color: #fff;
+    font-family: 'Montserrat';
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.tituloForm{
+    font-family: 'Quicksand';
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.textArea{
+    font-family: 'Montserrat';
+    width: 100%;
+    font-size: 18px;
+}
+
+.textArea:focus{
+    outline-color: #92c6f7;
+}
+
+.buttonContainer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+.btnCancelar{
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    padding: 5px 8px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btnGuardar{
+    background-color: #92c6f7;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 5px 8px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btnGuardar:hover{
+    background-color: #b992f7;
+}
+

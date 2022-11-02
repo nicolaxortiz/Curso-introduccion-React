@@ -1,16 +1,16 @@
 import React from "react";
 import ".././css/TodoStyles.css"
 
-function CreateTodoButtom(props){
+function CreateTodoButtom({setOpenModal, getOpenModal}){
     const click = () => {
-        alert("click");
+        setOpenModal(!getOpenModal)
     }
 
     return(
         <button 
             className="Boton"
             onClick={click}>
-                Agregar Tarea
+                +
         </button>
     );
 }

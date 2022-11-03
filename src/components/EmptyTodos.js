@@ -6,7 +6,9 @@ function EmptyTodos(){
         <React.Fragment>
             <h1 className="emptyTitle">¡Empieza Tu lista!</h1>
 
-            <h2 className="empty-p">Crea tu primer ToDo dando click en el icono</h2>
+            <img src="https://i.imgur.com/0O6FhKE.png" className="imgEmpty"></img>
+
+            <h2 className="empty-p">Crea un ToDo dando click en el icono</h2>
         </React.Fragment>
     )
 }

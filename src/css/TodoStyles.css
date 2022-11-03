@@ -66,7 +66,6 @@
     background-color: #b992f7;
     cursor: pointer;
     font-size: 30px;
-    transition: 300ms ease-in-out;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.212);
     cursor: pointer;
     transform: rotate(224deg);
@@ -153,6 +152,7 @@
 
 .textArea:focus{
     outline-color: #92c6f7;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.075);
 }
 
 .buttonContainer {
@@ -181,9 +181,11 @@
     padding: 5px 8px;
     cursor: pointer;
     display: inline-block;
+    transition: 400ms ease-in-out;
 }
 
 .btnGuardar:hover{
     background-color: #b992f7;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.212);
 }
 

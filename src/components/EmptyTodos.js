@@ -1,14 +1,16 @@
 import React from "react";
 import ".././css/TodoStyles.css"
 
-function EmptyTodos(){
+function EmptyTodos(props){
+
     return(
         <React.Fragment>
-            <h1 className="emptyTitle">¡Empieza Tu lista!</h1>
+            <h1 className="emptyTitle">¡UPS!</h1>
 
-            <img src="https://i.imgur.com/0O6FhKE.png" className="imgEmpty"></img>
+            <img src="https://i.imgur.com/0OuplJc.png" className="imgEmpty"></img>
 
-            <h2 className="empty-p">Crea un ToDo dando click en el icono</h2>
+            <h2 className="empty-p">No hay resultados de busqueda para: </h2>
+            <h2 className="empty-p">'{props.st}'</h2>
         </React.Fragment>
     )
 }

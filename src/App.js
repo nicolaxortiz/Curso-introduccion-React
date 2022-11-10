@@ -12,17 +12,26 @@ import { TodosLoading } from "./components/TodosLoading"
 import { EmptyTodos } from "./components/EmptyTodos"
 import { TodoHeader } from "./components/TodoHeader";
 import { BlankList } from './components/BlankList';
+import { TodoFilter } from './components/TodoFilter';
+import { BlankFilter } from './components/BlankFilter.js';
 
 function App() {
 
-  const {error, loading, searchedTodos, completeTodos, deleteTodos, getOpenModal, setOpenModal, totalTodos, completedTodos, getSearchValue, setSearch, addTodo} = useTodos();
+  const {error, loading, searchedTodos, completeTodos, deleteTodos, getOpenModal, setOpenModal, totalTodos, completedTodos, getSearchValue, setSearch, addTodo, getFilter, setFilter, filterTodos,} = useTodos();
 
+  console.log(filterTodos);
   return(
     <React.Fragment>
       <TodoHeader>
           <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} loading={loading}/>
           <TodoSearch getSearchValue={getSearchValue} setSearch={setSearch} loading={loading}/>
       </TodoHeader>
+
+      <TodoFilter
+        setFilter={setFilter}
+        searchText={getSearchValue}
+        getFilter={getFilter}
+      />
     
       <TodoList 
         error={error}
@@ -30,10 +39,13 @@ function App() {
         searchedTodos={searchedTodos}
         searchText={getSearchValue}
         totalTodos={totalTodos}
+        getFilter={getFilter}
+        filterTodos={filterTodos}
         onError={() => <TodosError />}
         onLoading={() => <TodosLoading/>}
         onEmptyTodos={(searchText) => <EmptyTodos st={searchText}/>}
         onBlankList={() => <BlankList/>}
+        onBlankFilter={() => <BlankFilter/>}
         render={todo => (
           <TodoItem 
               key={todo.text} 

@@ -9,8 +9,7 @@ function EmptyTodos(props){
 
             <img src="https://i.imgur.com/0OuplJc.png" className="imgEmpty"></img>
 
-            <h2 className="empty-p">No hay resultados de busqueda para: </h2>
-            <h2 className="empty-p">'{props.st}'</h2>
+            <h2 className="empty-p">No hay resultados de busqueda para: '{props.st}'</h2>
         </React.Fragment>
     )
 }

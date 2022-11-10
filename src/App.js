@@ -19,7 +19,6 @@ function App() {
 
   const {error, loading, searchedTodos, completeTodos, deleteTodos, getOpenModal, setOpenModal, totalTodos, completedTodos, getSearchValue, setSearch, addTodo, getFilter, setFilter, filterTodos,} = useTodos();
 
-  console.log(filterTodos);
   return(
     <React.Fragment>
       <TodoHeader>
@@ -45,7 +44,7 @@ function App() {
         onLoading={() => <TodosLoading/>}
         onEmptyTodos={(searchText) => <EmptyTodos st={searchText}/>}
         onBlankList={() => <BlankList/>}
-        onBlankFilter={() => <BlankFilter/>}
+        onBlankFilter={() => <BlankFilter getFilter={getFilter}/>}
         render={todo => (
           <TodoItem 
               key={todo.text} 

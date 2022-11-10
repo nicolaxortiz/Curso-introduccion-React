@@ -221,10 +221,32 @@
 
 .empty-p{
     font-weight: normal;
+    width: 440px;
 }
 
 .imgEmpty{
     width: 200px;
+}
+
+.containerFilter{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.txtFilter{
+    padding: 0 8px;
+    color: #bbbbbb;
+    cursor: pointer;
+}
+
+.txtFilter--Activate{
+    padding: 0 8px;
+    color: rgb(0, 0, 0);
+}
+
+.separador{
+    color: #bbbbbb;
 }
 
 @keyframes loadingAnimation {

@@ -12,15 +12,31 @@ function useTodos() {
       const [getSearchValue, setSearch] = React.useState('');
       const [getOpenModal, setOpenModal] = React.useState(false);
     
+      const [getFilter, setFilter] = React.useState('All');
+    
       const completedTodos = getTodos.filter(todo => todo.completed).length;
       const totalTodos = getTodos.length;
     
+      let filterTodos = [];
+
+      if(getFilter==='All'){
+        filterTodos = getTodos;
+      } else if(getFilter==='Completed'){
+        filterTodos= getTodos.filter(todo => {
+          return todo.completed == true
+        })
+      } else if(getFilter==='Incomplete'){
+        filterTodos= getTodos.filter(todo => {
+          return todo.completed == false
+        })
+      }
+
       let searchedTodos = [];
     
       if(getSearchValue.length === 0){
         searchedTodos = getTodos;
       } else{
-        searchedTodos = getTodos.filter(todo => {
+        searchedTodos = filterTodos.filter(todo => {
           const todoText = todo.text.toLowerCase();
           const searchText = getSearchValue.toLowerCase();
           return todoText.includes(searchText);
@@ -61,7 +77,10 @@ function useTodos() {
           deleteTodos,
           addTodo,
           getOpenModal,
-          setOpenModal
+          setOpenModal,
+          getFilter,
+          setFilter,
+          filterTodos,
         }
     )
 }

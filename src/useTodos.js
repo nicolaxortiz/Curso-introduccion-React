@@ -11,7 +11,7 @@ function useTodos() {
 
       const [getModalItem, setModalItem] = React.useState(false);
 
-      const [getSelectedItem, setSelectedItem] = React.useState('')
+      const [getSelectedItem, setSelectedItem] = React.useState({})
     
       const [getSearchValue, setSearch] = React.useState('');
       const [getOpenModal, setOpenModal] = React.useState(false);
@@ -47,12 +47,12 @@ function useTodos() {
         }) 
       }
 
-      const addTodo = (objeto) => {
+      const addTodo = (title, text) => {
         const newTodos = [...getTodos];
         newTodos.push({
           completed: false,
-          title: objeto.title,
-          text: objeto.text
+          title: title,
+          text: text
         })
         saveTodos(newTodos)
       }
@@ -89,7 +89,7 @@ function useTodos() {
           getModalItem, 
           setModalItem,
           getSelectedItem,
-          setSelectedItem
+          setSelectedItem,
         }
     )
 }

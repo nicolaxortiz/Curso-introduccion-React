@@ -41,5 +41,16 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "http://nicolaxortiz.github.io/Curso-introduccion-React"
+  "homepage": "http://nicolaxortiz.github.io/Curso-introduccion-React",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolaxortiz/Curso-introduccion-React.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolaxortiz/Curso-introduccion-React/issues"
+  }
 }

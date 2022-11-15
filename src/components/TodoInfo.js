@@ -9,8 +9,9 @@ function TodoInfo(props) {
     return(
         <React.Fragment>
             <form className="informacion">
-            <p className="tituloForm">Informacion!</p>
-            <h2 className="subtitle"><strong>Tarea:</strong> {props.getSelectedItem}</h2>
+            <p className="tituloForm">Información!</p>
+            <h2 className="subtitle"><strong>Tarea:</strong> {props.getSelectedItem.title}</h2>
+            <h2 className="subtitle"><strong>Descripción:</strong> {props.getSelectedItem.text}</h2>
             
             <div className="buttonContainer">
                 <button

@@ -4,7 +4,7 @@ import ".././css/TodoStyles.css"
 function TodoItem(props){
     
     const OnClick = () => {
-        props.setSelectedItem(props.text);
+        props.setSelectedItem({title: props.title, text: props.text});
         props.setModalItem(true)
     }
     return(
@@ -16,7 +16,7 @@ function TodoItem(props){
             >
                 &#10003;
             </span>
-            <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`} onClick={OnClick}>{props.text}</p>
+            <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`} onClick={OnClick}>{props.title}</p>
             <span 
                 className="Eliminar"
                 onClick={props.onDelete}>

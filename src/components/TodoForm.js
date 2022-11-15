@@ -1,14 +1,13 @@
 import React from "react";
 
-function TodoForm({addTodo, setOpenModal}) {
+function TodoForm(props) {
 
-    const [getNewTodoValue, setNewTodoValue] = React.useState({title: '', text: ''});
+   
     const [getTitle, setTitle] = React.useState('')
     const [getText, setText] = React.useState('')
-    let sendTodo;
 
     const OnCancel = () => {
-        setOpenModal(false)
+        props.setOpenModal(false)
     }
 
     const onChangeTitle = (event) => {
@@ -21,10 +20,8 @@ function TodoForm({addTodo, setOpenModal}) {
 
     const OnSubmit = (event) => {
         event.preventDefault();
-        setNewTodoValue({title: getTitle, text: getText})
-        console.log(getNewTodoValue);
-        // addTodo(getNewTodoValue)
-        setOpenModal(false)
+        props.addTodo(getTitle, getText)
+        props.setOpenModal(false)
     }
 
     return(

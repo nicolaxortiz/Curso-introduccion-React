@@ -27,8 +27,6 @@ function App() {
     getModalItem, setModalItem, getSelectedItem, 
     setSelectedItem} = useTodos();
 
-    console.log(filterTodos);
-
   return(
     <React.Fragment>
       <TodoHeader>
@@ -58,6 +56,7 @@ function App() {
         render={todo => (
           <TodoItem 
               key={todo.text} 
+              title={todo.title}
               text={todo.text}
               completed={todo.completed} 
               onComplete={() => {completeTodos(todo.text)}}

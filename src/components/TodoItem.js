@@ -2,16 +2,21 @@ import React from "react";
 import ".././css/TodoStyles.css"
 
 function TodoItem(props){
-
+    
+    const OnClick = () => {
+        props.setSelectedItem(props.text);
+        props.setModalItem(true)
+    }
     return(
-        <li className={`TodoItem ${props.completed && 'TodoItem--complete'}`}>
+        <li className={`TodoItem ${props.completed && 'TodoItem--complete'}`} 
+            >
             <span 
                 className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
                 onClick={props.onComplete}
             >
                 &#10003;
             </span>
-            <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>{props.text}</p>
+            <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`} onClick={OnClick}>{props.text}</p>
             <span 
                 className="Eliminar"
                 onClick={props.onDelete}>

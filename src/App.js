@@ -14,10 +14,20 @@ import { TodoHeader } from "./components/TodoHeader";
 import { BlankList } from './components/BlankList';
 import { TodoFilter } from './components/TodoFilter';
 import { BlankFilter } from './components/BlankFilter.js';
+import { TodoInfo } from './components/TodoInfo';
+import { ModalItem } from './Modal/item.js';
 
 function App() {
 
-  const {error, loading, searchedTodos, completeTodos, deleteTodos, getOpenModal, setOpenModal, totalTodos, completedTodos, getSearchValue, setSearch, addTodo, getFilter, setFilter, filterTodos,} = useTodos();
+  const {error, loading, searchedTodos, 
+    completeTodos, deleteTodos, getOpenModal, 
+    setOpenModal, totalTodos, completedTodos, 
+    getSearchValue, setSearch, addTodo, 
+    getFilter, setFilter, filterTodos, 
+    getModalItem, setModalItem, getSelectedItem, 
+    setSelectedItem} = useTodos();
+
+    console.log(filterTodos);
 
   return(
     <React.Fragment>
@@ -52,9 +62,17 @@ function App() {
               completed={todo.completed} 
               onComplete={() => {completeTodos(todo.text)}}
               onDelete={() => {deleteTodos(todo.text)}}
+              setModalItem={setModalItem}
+              setSelectedItem={setSelectedItem}
               />
           )}
       />
+
+      {getModalItem && (
+          <ModalItem>
+              <TodoInfo setModalItem={setModalItem} getSelectedItem={getSelectedItem}/>
+          </ModalItem>
+      )}
  
       {getOpenModal && (
           <Modal>

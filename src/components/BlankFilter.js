@@ -6,7 +6,7 @@ function BlankFilter(props){
 
     if(props.getFilter == "Completed"){
         title = "¿Qué paso?";  
-        msg = "Parece que no has completado ninguna tarea aun";  
+        msg = "Parece que no has completado ninguna tarea aún";  
         img = "https://i.imgur.com/UjXFNb6.png"    
     }else{
         title = "¡Muy bien!";  

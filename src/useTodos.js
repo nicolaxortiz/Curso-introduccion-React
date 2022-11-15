@@ -8,6 +8,10 @@ function useTodos() {
         loading,
         error
       } = useLocalStorage("TODOS_V1", []);
+
+      const [getModalItem, setModalItem] = React.useState(false);
+
+      const [getSelectedItem, setSelectedItem] = React.useState('')
     
       const [getSearchValue, setSearch] = React.useState('');
       const [getOpenModal, setOpenModal] = React.useState(false);
@@ -37,17 +41,18 @@ function useTodos() {
         searchedTodos = getTodos;
       } else{
         searchedTodos = filterTodos.filter(todo => {
-          const todoText = todo.text.toLowerCase();
+          const todoTitle = todo.title.toLowerCase();
           const searchText = getSearchValue.toLowerCase();
-          return todoText.includes(searchText);
+          return todoTitle.includes(searchText);
         }) 
       }
 
-      const addTodo = (text) => {
+      const addTodo = (objeto) => {
         const newTodos = [...getTodos];
         newTodos.push({
           completed: false,
-          text
+          title: objeto.title,
+          text: objeto.text
         })
         saveTodos(newTodos)
       }
@@ -81,6 +86,10 @@ function useTodos() {
           getFilter,
           setFilter,
           filterTodos,
+          getModalItem, 
+          setModalItem,
+          getSelectedItem,
+          setSelectedItem
         }
     )
 }

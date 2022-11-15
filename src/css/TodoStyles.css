@@ -43,6 +43,10 @@
 .TodoItem-p{
     padding: 0px 70px;
     width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .TodoItem-p--complete {
@@ -195,6 +199,38 @@
 }
 
 .btnGuardar:hover{
+    background-color: #b992f7;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.212);
+}
+
+.informacion{
+    background-color: #fff;
+    font-family: 'Montserrat';
+    padding: 25px 30px;
+    border-radius: 5px;
+    color: black;
+}
+
+.subtitle{
+    color: black;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: 'Quicksand';
+}
+
+.btnCerrar{
+    background-color: #92c6f7;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: 400ms ease-in-out;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.btnCerrar:hover{
     background-color: #b992f7;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.212);
 }
